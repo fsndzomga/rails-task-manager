@@ -1,0 +1,27 @@
+<ul>
+
+  <li><h3>Title: <%= @task.title %></h3></li>
+  <li><p id="details"><%= @task.details %></p></li>
+
+</ul>
+
+<br>
+
+<div id= "whitelinks" class="inline-buttons d-flex justify-content-end">
+
+
+<div class="btn btn-dark m-5">
+<%= link_to "Edit the task", edit_task_path %>
+</div>
+
+<div class="btn btn-dark m-5">
+<%= link_to "Back to list", tasks_path %>
+</div>
+
+<div class="btn btn-dark m-5">
+<%= link_to "Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+</div>
+</div>
